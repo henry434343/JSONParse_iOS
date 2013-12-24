@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-
 @interface ViewController ()
 @end
 
@@ -18,21 +17,21 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     NSLog(@"viewDidLoad");
+    
     [self wsLooking];
 }
 
-#define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) //1
+#define queue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) //1
 
-//抓取playList中的vidoe 遞迴取值
 - (void)wsLooking{
-    dispatch_async(kBgQueue, ^{
+    dispatch_async(queue, ^{
 
         NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"url"]];
-        [self performSelectorOnMainThread:@selector(fetchedDataFromPlayList:) withObject:data waitUntilDone:YES];
+        [self performSelectorOnMainThread:@selector(fetchedData:) withObject:data waitUntilDone:YES];
     });
 }
 
--(void)fetchedDataFromPlayList:(NSData*)responseData {
+-(void)fetchedData:(NSData*)responseData {
     
     if (responseData) {
         

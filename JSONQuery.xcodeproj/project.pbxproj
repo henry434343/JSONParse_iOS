@@ -474,6 +474,7 @@
 				D9BEFB40181795B700C91B75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D9BEFB41181795B700C91B75 /* Build configuration list for PBXNativeTarget "JSONQueryTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +483,7 @@
 				D9BEFB43181795B700C91B75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
